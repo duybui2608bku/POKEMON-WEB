@@ -1,10 +1,11 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import './Header.scss'
 import { FaBars } from 'react-icons/fa'
 import { useState } from 'react'
 const Header = () => {
   const [bar, setBar] = useState<Boolean>(false)
+  const nagivate = useNavigate()
   return (
     <>
       <div className='header-container'>
@@ -15,9 +16,11 @@ const Header = () => {
           <FaBars onClick={() => setBar(!bar)} />
         </div>
         <div className={`menu ${bar ? 'active' : ''}`}>
-          <div className='active'>Home</div>
+          <div className='active' onClick={() => nagivate('/')}>
+            Home
+          </div>
           <div>Elemental</div>
-          <div>Total Pokemon</div>
+          <div onClick={() => nagivate('/pokemon')}>Total Pokemon</div>
           <div>About</div>
         </div>
       </div>
