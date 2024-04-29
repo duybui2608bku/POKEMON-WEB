@@ -3,12 +3,13 @@ import getListPokemon from '../../Apis/ListPokemon.api'
 import useQueryConfig from '../../Hooks/useQueryConfig'
 import './ListPokemon.scss'
 import getDetailPokemon from '../../Apis/PokemonDetail'
-import { Badge, Col, Pagination, Row } from 'antd'
+import { Badge, Col, Pagination, Row, Skeleton } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import { generateNameId } from '../../Utils/Utils.type'
 
 const ListPokemon = () => {
   const queryConfig = useQueryConfig()
-  const { data: ListPokemon } = useQuery({
+  const { data: ListPokemon, isLoading } = useQuery({
     queryKey: ['pokemon', queryConfig],
     queryFn: async () => {
       const data = await getListPokemon(queryConfig)
@@ -16,8 +17,6 @@ const ListPokemon = () => {
       return details
     }
   })
-
-  console.log(ListPokemon)
 
   const nagivate = useNavigate()
 
@@ -27,34 +26,50 @@ const ListPokemon = () => {
 
   return (
     <div className='pokemon-container'>
-      <Row gutter={[30, 30]} style={{ marginBottom: '30px' }}>
-        {ListPokemon?.map((item) => (
-          <Col xl={6} key={item.data.id}>
-            <Badge.Ribbon text={`#${item.data.id}`} color='orange'>
-              <div className='pokemon-detail'>
-                <div className='img-pokemon'>
-                  <img
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.data.id}.svg`}
-                    alt={item.data.name}
-                  />
+      {isLoading ? (
+        <Row gutter={[30, 30]}>
+          {Array(8)
+            .fill(0)
+            .map((_, index) => {
+              return (
+                <>
+                  <Col key={index} sm={24} xs={24} md={12} lg={8} xl={6}>
+                    <Skeleton.Image active style={{ minWidth: '330px', minHeight: '235px' }} />
+                  </Col>
+                </>
+              )
+            })}
+        </Row>
+      ) : (
+        <Row gutter={[30, 30]} style={{ marginBottom: '30px' }}>
+          {ListPokemon?.map((item) => (
+            <Col sm={24} xs={24} md={12} lg={8} xl={6} key={item.data.id}>
+              <Badge.Ribbon text={`#${item.data.id}`} color='orange'>
+                <div className='pokemon-detail' onClick={() => nagivate(`/${item.data.id}`)}>
+                  <div className='img-pokemon'>
+                    <img
+                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.data.id}.svg`}
+                      alt={item.data.name}
+                    />
+                  </div>
+                  <div className='name-pokemon'>{item.data.name.charAt(0).toUpperCase() + item.data.name.slice(1)}</div>
+                  <div className='type-pokemon'>
+                    {item.data.types.map((type, index) => (
+                      <>
+                        <div key={type.type.name} className={`type type-${type.type.name}`}>
+                          {type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)}
+                        </div>
+                        <div className={`back-gnd back-${type.type.name}${index}`}></div>
+                      </>
+                    ))}
+                  </div>
                 </div>
-                <div className='name-pokemon'>{item.data.name}</div>
-                <div className='type-pokemon'>
-                  {item.data.types.map((type) => (
-                    <>
-                      <div key={type.type.name} className={`type ${type.type.name}`}>
-                        {type.type.name}
-                      </div>
-                      <div className={`back-gnd ${type.type.name}`}></div>
-                    </>
-                  ))}
-                </div>
-              </div>
-            </Badge.Ribbon>
-          </Col>
-        ))}
-      </Row>
-      <Pagination className='pagi' defaultCurrent={1} total={650} onChange={handleChange} />
+              </Badge.Ribbon>
+            </Col>
+          ))}
+        </Row>
+      )}
+      <Pagination className='pagi' defaultCurrent={1} total={800} onChange={handleChange} />
     </div>
   )
 }

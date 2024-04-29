@@ -1,6 +1,7 @@
 export interface PokemonConfig {
   limit?: string | number
   offset?: string | number
+  id?: string | number
 }
 
 export interface ListPokemon {
