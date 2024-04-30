@@ -1,24 +1,273 @@
 .detail-pokemon-container {
-  background-image: linear-gradient(200deg, #f05f57, #360940);
+  background-image: linear-gradient(200deg, #232442, #360940);
   height: 100vh;
   overflow: hidden;
   position: relative;
+  padding: 0 50px;
   .left {
-    position: absolute;
-    height: 100vh;
-    background-color: green;
-    width: 450px;
-    left: -250px;
-    transform: rotate(15deg);
+    .img-pokemon {
+      position: absolute;
+      z-index: 99;
+      top: 100px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .back-grass {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #9bcc50;
+    }
+    .back-fire {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #fd7d24;
+    }
+    .back-water {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #4592c4;
+    }
+    .back-bug {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #729f3f;
+    }
+    .back-poison {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #b97fc9;
+    }
+    .back-normal {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #a4acaf;
+    }
+    .back-electric {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #eed535;
+    }
+    .back-ground {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #b38e82;
+    }
+    .back-fairy {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #fdb9e9;
+    }
+    .back-fighting {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #d56723;
+    }
+    .back-psychic {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #f366b9;
+    }
+    .back-rock {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #a38c21;
+    }
+    .back-steel {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #9eb7b8;
+    }
+    .back-ice {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #51c4e7;
+    }
+    .back-ghost {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #7b62a3;
+    }
+    .back-dragon {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #177258;
+    }
+    .back-dark {
+      position: absolute;
+      width: 330px;
+      height: 1000px;
+      position: absolute;
+      top: 0;
+      left: -250px;
+      transform: rotate(15deg);
+      background-color: #707070;
+    }
   }
   .right {
-    position: absolute;
-    height: 600px;
-    top: 40px;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    color: white;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .id-poke {
+      font-size: 50px;
+      font-weight: 600;
+    }
+    .name-poke {
+      font-size: 100px;
+      font-weight: 900;
+    }
+    .des-poke {
+      font-size: 30px;
+    }
+    .evo-poke {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+      gap: 100px;
+      .evo-1 {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+        box-shadow:
+          rgb(204, 219, 232) 3px 3px 6px 0px inset,
+          rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .evo-2 {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        backdrop-filter: blur(5px);
+        box-shadow:
+          rgb(204, 219, 232) 3px 3px 6px 0px inset,
+          rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .evo-3 {
+        width: 100px;
+        padding: 20px;
+        height: 100px;
+        backdrop-filter: blur(5px);
+        box-shadow:
+          rgb(204, 219, 232) 3px 3px 6px 0px inset,
+          rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .detail-pokemon-container {
+    height: 1600px;
+    .right {
+      top: 500px !important;
+      position: absolute !important;
+      .name-poke {
+        font-size: 50px !important;
+      }
+      .evo-poke {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 }

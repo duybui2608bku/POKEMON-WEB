@@ -5,7 +5,6 @@ import './ListPokemon.scss'
 import getDetailPokemon from '../../Apis/PokemonDetail'
 import { Badge, Col, Pagination, Row, Skeleton } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import { generateNameId } from '../../Utils/Utils.type'
 
 const ListPokemon = () => {
   const queryConfig = useQueryConfig()

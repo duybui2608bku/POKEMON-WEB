@@ -22,3 +22,36 @@ export interface DetailsPokemon {
     }
   }[]
 }
+
+export interface DetailPokemonSpecie {
+  flavor_text_entries: [{ flavor_text: string }]
+  evolution_chain: {
+    url: string
+  }
+}
+
+export interface DetaiPokemonEvo {
+  id: number
+  chain: {
+    species: {
+      name: string
+      url: string
+    }
+    evolves_to?: [
+      {
+        species: {
+          name: string
+          url: string
+        }
+        evolves_to?: [
+          {
+            species: {
+              name: string
+              url: string
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
