@@ -13,7 +13,6 @@ const GamePokemon = () => {
   const [idPoke, setIdPoke] = useState<number>(id())
   const [isViewPoke, setIsViewPoke] = useState<boolean>(false)
   const [isCorrect, setIsCorrect] = useState<boolean>(false)
-  const [mp3, setMp3] = useState<boolean>(false)
   const { data: DetaiPoke, isLoading } = useQuery({
     queryKey: ['gamePoke', idPoke],
     queryFn: () => {
@@ -66,7 +65,7 @@ const GamePokemon = () => {
             <img src={logo} />
           </div>
           <div className='input-name'>
-            <Input status={isCorrect ? '' : 'error'} allowClear onPressEnter={handleSubmit} />
+            <Input disabled={isCorrect} status={isCorrect ? '' : 'error'} allowClear onPressEnter={handleSubmit} />
           </div>
           <div className='button'>
             <button onClick={handleDontKnow}>I dont know</button>

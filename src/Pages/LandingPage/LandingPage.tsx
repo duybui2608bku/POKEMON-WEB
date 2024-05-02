@@ -1,8 +1,6 @@
 import './Landingpage.scss'
 import ash from '../../assets/Kantoash.webp'
 import poke from '../../assets/Remove-bg.ai_1713943132144.png'
-import { useNavigate } from 'react-router-dom'
-const nagivate = useNavigate()
 const LandingPage = () => {
   return (
     <>

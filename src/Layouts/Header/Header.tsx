@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import './Header.scss'
 import { FaBars } from 'react-icons/fa'
@@ -26,7 +26,6 @@ const Header = () => {
           <div className={active.pathname == '/pokemon' ? 'active' : ''} onClick={() => nagivate('/pokemon')}>
             Total Pokemon
           </div>
-          <div>About</div>
         </div>
       </div>
       <Outlet />
