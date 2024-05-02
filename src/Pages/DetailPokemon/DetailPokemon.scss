@@ -13,6 +13,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        -webkit-box-reflect: below 0 linear-gradient(transparent, #fff5);
       }
     }
     .back-grass {

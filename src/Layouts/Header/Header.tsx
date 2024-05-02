@@ -20,7 +20,9 @@ const Header = () => {
           <div className={active.pathname == '/' ? 'active' : ''} onClick={() => nagivate('/')}>
             Home
           </div>
-          <div>Elemental</div>
+          <div className={active.pathname == '/game' ? 'active' : ''} onClick={() => nagivate('/game')}>
+            Who That Pokemon
+          </div>
           <div className={active.pathname == '/pokemon' ? 'active' : ''} onClick={() => nagivate('/pokemon')}>
             Total Pokemon
           </div>

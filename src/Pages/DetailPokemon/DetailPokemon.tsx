@@ -18,6 +18,7 @@ const DetailPokemon = () => {
       return getDetailPokemon(id)
     }
   })
+  console.log(idEvo)
 
   useEffect(() => {
     const fetchDescription = async () => {

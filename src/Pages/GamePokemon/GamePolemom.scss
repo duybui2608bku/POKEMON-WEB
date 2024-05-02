@@ -1,0 +1,57 @@
+.game-poke-container {
+  height: 100vh;
+  background-image: linear-gradient(200deg, #f05f57, #360940);
+  .img-poke {
+    left: 50px;
+    top: 100px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .name-poke {
+    right: 150px;
+    position: absolute;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    .logo {
+      height: 260px;
+      width: 350px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .button {
+      display: flex;
+      gap: 30px;
+      button {
+        cursor: pointer;
+        width: 150px;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: yellow;
+      }
+    }
+    .input-name {
+      width: 320px;
+    }
+  }
+  .name {
+    position: absolute;
+    top: 350px;
+    left: 600px;
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    display: none;
+  }
+}

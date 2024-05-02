@@ -3,7 +3,7 @@ import LandingPage from './Pages/LandingPage/LandingPage'
 import ListPokemon from './Pages/ListPokemon/ListPokemon'
 import Header from './Layouts/Header/Header'
 import DetailPokemon from './Pages/DetailPokemon/DetailPokemon'
-
+import GamePokemon from './Pages/GamePokemon/GamePokemon'
 const useRouteElement = () => {
   const routeElement = useRoutes([
     {
@@ -22,6 +22,10 @@ const useRouteElement = () => {
           path: ':id',
           index: true,
           element: <DetailPokemon />
+        },
+        {
+          path: 'game',
+          element: <GamePokemon />
         }
       ]
     }

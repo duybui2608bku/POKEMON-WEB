@@ -31,7 +31,7 @@
     .image-one {
       position: absolute;
       right: 0;
-      top: 70px;
+      top: 100px;
       height: 600px;
       img {
         height: 100%;
@@ -70,6 +70,7 @@
       -webkit-text-fill-color: transparent;
     }
     button {
+      cursor: pointer;
       font-size: 25px;
       color: white;
       padding: 15px 40px;
